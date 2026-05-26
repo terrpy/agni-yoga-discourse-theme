@@ -1,0 +1,361 @@
+/*
+ * Agni Yoga World Community — Discourse Theme
+ * Matches the aesthetic of agniyogaworld.org:
+ *   Deep indigo/navy backgrounds, gold accents, parchment surfaces,
+ *   elegant serif headings (Cormorant Garamond), clean sans body text.
+ */
+
+/* ─── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ─── Color tokens ─────────────────────────────────────────── */
+:root {
+  --ayw-indigo-deep:   #1a1b3a;
+  --ayw-indigo-mid:    #2b2d5e;
+  --ayw-indigo-light:  #3d3f7a;
+  --ayw-gold:          #c9a84c;
+  --ayw-gold-light:    #e8d5a0;
+  --ayw-gold-dim:      #a07c30;
+  --ayw-parchment:     #f5f0e8;
+  --ayw-parchment-mid: #ede6d8;
+  --ayw-parchment-dark:#d8cfbb;
+  --ayw-text:          #1e1e3f;
+  --ayw-text-muted:    #5a5a7a;
+  --ayw-border:        #d4c9b0;
+  --ayw-star:          ✦;
+
+  /* Map to Discourse variables */
+  --primary:           var(--ayw-text);
+  --secondary:         var(--ayw-parchment);
+  --tertiary:          var(--ayw-gold);
+  --header_background: var(--ayw-indigo-deep);
+  --header_primary:    var(--ayw-gold-light);
+}
+
+/* ─── Typography ───────────────────────────────────────────── */
+body, html {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  color: var(--ayw-text);
+  background-color: var(--ayw-parchment);
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, .topic-title,
+.cooked h1, .cooked h2, .cooked h3 {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-weight: 500;
+  color: var(--ayw-indigo-deep);
+  letter-spacing: 0.02em;
+}
+
+.topic-title a, .fancy-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--ayw-indigo-deep);
+  line-height: 1.3;
+
+  &:hover { color: var(--ayw-gold-dim); }
+}
+
+.cooked {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ayw-text);
+}
+
+/* ─── Header ───────────────────────────────────────────────── */
+#main-outlet-wrapper,
+.d-header {
+  background: var(--ayw-indigo-deep);
+}
+
+.d-header {
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+
+  .title a {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ayw-gold-light);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &:hover { color: var(--ayw-gold); }
+  }
+
+  .d-icon { color: var(--ayw-gold-light); }
+
+  button, .btn {
+    color: var(--ayw-gold-light);
+    &:hover { color: var(--ayw-gold); }
+  }
+}
+
+/* Header nav links */
+.header-buttons .btn-primary,
+.header-buttons .login-button {
+  background: var(--ayw-gold);
+  color: var(--ayw-indigo-deep);
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  padding: 6px 14px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: var(--ayw-gold-light);
+    color: var(--ayw-indigo-deep);
+  }
+}
+
+/* ─── Page background & layout ─────────────────────────────── */
+#main-outlet, .wrap {
+  background: var(--ayw-parchment);
+}
+
+.container.posts {
+  background: #fff;
+  border: 1px solid var(--ayw-border);
+  border-radius: 4px;
+  box-shadow: 0 1px 8px rgba(26, 27, 58, 0.06);
+}
+
+/* ─── Category list ─────────────────────────────────────────── */
+.category-list {
+  th, td { border-color: var(--ayw-border); }
+
+  .category h3 a {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--ayw-indigo-deep);
+    &:hover { color: var(--ayw-gold-dim); }
+  }
+
+  .category-description {
+    font-family: 'Inter', sans-serif;
+    color: var(--ayw-text-muted);
+    font-size: 0.875rem;
+  }
+}
+
+/* Category badges / bullets */
+.badge-wrapper.bullet .badge-category-bg,
+.badge-wrapper.bar .badge-category-bg {
+  background: var(--ayw-indigo-mid) !important;
+}
+
+/* ─── Topic list ────────────────────────────────────────────── */
+.topic-list {
+  th, td {
+    border-bottom-color: var(--ayw-parchment-dark);
+  }
+
+  .main-link a {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--ayw-indigo-deep);
+    &:hover { color: var(--ayw-gold-dim); }
+  }
+
+  tr:hover td { background: rgba(201, 168, 76, 0.05); }
+
+  .topic-list-data .likes .d-icon-heart {
+    color: var(--ayw-gold);
+  }
+}
+
+/* ─── Posts & replies ───────────────────────────────────────── */
+.topic-post article.boxed {
+  border-color: var(--ayw-border);
+}
+
+.post-avatar .avatar { border: 2px solid var(--ayw-border); }
+
+.names .first a {
+  color: var(--ayw-indigo-mid);
+  font-weight: 500;
+  &:hover { color: var(--ayw-gold-dim); }
+}
+
+/* Post action buttons */
+.post-controls .actions button {
+  color: var(--ayw-text-muted);
+  &:hover { color: var(--ayw-gold-dim); }
+}
+
+.post-controls .btn-like.has-like {
+  color: var(--ayw-gold);
+}
+
+/* Blockquotes inside posts */
+.cooked blockquote {
+  border-left: 3px solid var(--ayw-gold);
+  background: rgba(201, 168, 76, 0.07);
+  padding: 12px 16px;
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
+  color: var(--ayw-text-muted);
+}
+
+/* Code blocks */
+.cooked pre, .cooked code {
+  background: var(--ayw-indigo-deep);
+  color: var(--ayw-gold-light);
+  border: none;
+  border-radius: 4px;
+}
+
+/* ─── Buttons ───────────────────────────────────────────────── */
+.btn-primary {
+  background: var(--ayw-indigo-mid);
+  color: var(--ayw-gold-light);
+  border: 1px solid var(--ayw-indigo-light);
+  border-radius: 3px;
+  transition: background 0.2s;
+
+  &:hover, &:focus {
+    background: var(--ayw-indigo-deep);
+    color: var(--ayw-gold);
+  }
+}
+
+.btn {
+  border-radius: 3px;
+  &:hover { color: var(--ayw-gold-dim); }
+}
+
+/* ─── Navigation / sidebar ──────────────────────────────────── */
+.sidebar-wrapper {
+  background: var(--ayw-indigo-deep);
+  border-right: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.sidebar-section-header-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--ayw-gold-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.sidebar-section-link {
+  color: rgba(232, 213, 160, 0.8);
+  font-size: 0.9rem;
+
+  &:hover, &.active {
+    background: rgba(201, 168, 76, 0.12);
+    color: var(--ayw-gold-light);
+  }
+
+  .sidebar-section-link-prefix .d-icon { color: var(--ayw-gold-dim); }
+}
+
+/* ─── Nav / tabs ────────────────────────────────────────────── */
+.nav-pills > li > a {
+  color: var(--ayw-text-muted);
+  border-radius: 3px;
+
+  &:hover { background: var(--ayw-parchment-mid); color: var(--ayw-indigo-deep); }
+  &.active { background: var(--ayw-indigo-mid); color: var(--ayw-gold-light); }
+}
+
+/* ─── Search ────────────────────────────────────────────────── */
+.search-input {
+  background: var(--ayw-parchment-mid);
+  border-color: var(--ayw-border);
+  color: var(--ayw-text);
+  border-radius: 3px;
+
+  &:focus { border-color: var(--ayw-gold); outline: none; }
+}
+
+/* ─── Composer ──────────────────────────────────────────────── */
+#reply-control {
+  background: #fff;
+  border-top: 2px solid var(--ayw-gold);
+  box-shadow: 0 -4px 24px rgba(26, 27, 58, 0.1);
+
+  .d-editor-textarea-wrapper {
+    border-color: var(--ayw-border);
+    border-radius: 4px;
+  }
+
+  .title-input { color: var(--ayw-indigo-deep); }
+}
+
+/* ─── Tags ──────────────────────────────────────────────────── */
+.discourse-tag {
+  background: var(--ayw-parchment-mid);
+  color: var(--ayw-indigo-mid);
+  border: 1px solid var(--ayw-border);
+  border-radius: 2px;
+  font-size: 0.8rem;
+  padding: 1px 6px;
+
+  &:hover { background: var(--ayw-indigo-mid); color: var(--ayw-gold-light); }
+}
+
+/* ─── Notifications ─────────────────────────────────────────── */
+.alert.alert-info {
+  background: rgba(43, 45, 94, 0.08);
+  border-left: 3px solid var(--ayw-indigo-mid);
+  color: var(--ayw-indigo-deep);
+}
+
+.badge-notification {
+  background: var(--ayw-gold);
+  color: var(--ayw-indigo-deep);
+}
+
+/* ─── User cards & profiles ─────────────────────────────────── */
+.user-card {
+  border: 1px solid var(--ayw-border);
+  background: var(--ayw-parchment);
+  box-shadow: 0 4px 20px rgba(26, 27, 58, 0.12);
+
+  .username a { color: var(--ayw-indigo-mid); }
+  .bio { font-family: 'EB Garamond', Georgia, serif; font-style: italic; }
+}
+
+/* ─── Footer ────────────────────────────────────────────────── */
+.d-footer {
+  background: var(--ayw-indigo-deep);
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  color: rgba(232, 213, 160, 0.6);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 16px 0;
+
+  a { color: var(--ayw-gold-light); &:hover { color: var(--ayw-gold); } }
+}
+
+/* ─── Ornamental dividers ───────────────────────────────────── */
+.topic-status-info, .topic-map {
+  border-color: var(--ayw-border);
+}
+
+/* Gold rule under category headings */
+.category-heading::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--ayw-gold);
+  margin-top: 6px;
+}
+
+/* ─── Loading spinner ───────────────────────────────────────── */
+.loading-indicator {
+  .spinner { border-top-color: var(--ayw-gold); }
+}
+
+/* ─── Scrollbar (webkit) ────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--ayw-parchment-mid); }
+::-webkit-scrollbar-thumb { background: var(--ayw-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ayw-gold-dim); }

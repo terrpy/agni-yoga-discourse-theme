@@ -1,0 +1,67 @@
+/*
+ * Agni Yoga World — Desktop overrides
+ */
+
+/* Wider sidebar looks elegant on desktop */
+.sidebar-wrapper {
+  min-width: 230px;
+}
+
+/* Slightly larger headings on desktop */
+.topic-title .fancy-title {
+  font-size: 1.65rem;
+}
+
+/* Category list — make badges align nicely */
+.category-list th.topics,
+.category-list th.posts {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ayw-text-muted);
+}
+
+/* Feature category description as italic serif */
+.category-list .category-description p {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ayw-text-muted);
+  line-height: 1.5;
+}
+
+/* Subtle golden left border on selected/active topic row */
+.topic-list tr.visited .main-link a {
+  color: var(--ayw-text-muted);
+}
+
+.topic-list tr:focus-within,
+.topic-list tr.selected {
+  box-shadow: inset 3px 0 0 var(--ayw-gold);
+  background: rgba(201, 168, 76, 0.04);
+}
+
+/* Post stream: give the author name area a bit more presence */
+.topic-meta-data .names {
+  font-size: 0.9rem;
+}
+
+.post-date, .post-date a {
+  color: var(--ayw-text-muted);
+  font-size: 0.8rem;
+}
+
+/* Composer — desktop height feels more spacious */
+#reply-control.open .d-editor {
+  min-height: 250px;
+}
+
+/* Quote button on text select */
+.quote-button {
+  background: var(--ayw-indigo-mid);
+  color: var(--ayw-gold-light);
+  border-radius: 3px;
+  border: 1px solid var(--ayw-indigo-light);
+  font-size: 0.8rem;
+  padding: 4px 10px;
+}

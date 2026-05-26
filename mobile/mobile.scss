@@ -1,0 +1,47 @@
+/*
+ * Agni Yoga World — Mobile overrides
+ */
+
+/* Keep header compact and readable on mobile */
+.d-header .title a {
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+}
+
+/* Topic titles slightly smaller */
+.topic-title .fancy-title {
+  font-size: 1.25rem;
+}
+
+/* Post body readable on small screens */
+.cooked {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* Bottom nav bar - gold active indicator */
+.d-header-icons .active .d-icon,
+.mobile-nav .active a {
+  color: var(--ayw-gold);
+}
+
+/* Category list simplified on mobile */
+.category-list .category h3 a {
+  font-size: 1rem;
+}
+
+/* Composer full-width */
+#reply-control {
+  border-top: 2px solid var(--ayw-gold);
+}
+
+/* Tag pills slightly smaller */
+.discourse-tag {
+  font-size: 0.75rem;
+  padding: 1px 5px;
+}
+
+/* Reduce sidebar padding on mobile */
+.sidebar-section-link {
+  padding: 6px 10px;
+}

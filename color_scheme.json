@@ -1,0 +1,15 @@
+{
+  "name": "Agni Yoga World",
+  "colors": {
+    "primary": "1e1e3f",
+    "secondary": "f5f0e8",
+    "tertiary": "c9a84c",
+    "quaternary": "2b2d5e",
+    "header_background": "1a1b3a",
+    "header_primary": "e8d5a0",
+    "highlight": "e8d5a0",
+    "danger": "9e2a2a",
+    "success": "2a6b3c",
+    "love": "c9a84c"
+  }
+}
