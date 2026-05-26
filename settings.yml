@@ -1,9 +1,4 @@
-colors:
-  indigo_deep: "1a1b3a"
-  indigo_mid: "2b2d5e"
-  gold_accent: "c9a84c"
-  gold_light: "e8d5a0"
-  parchment: "f5f0e8"
-  text_primary: "1e1e3f"
-  text_muted: "6b6b8a"
-  border_subtle: "d4c9b0"
+#Agni Yoga World Community - Theme Settings
+#Color values are defined directly in common/common.scss
+#Add any configurable settings here using supported types:
+# integer, bool, list, enum, upload
