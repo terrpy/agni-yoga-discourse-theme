@@ -2,9 +2,50 @@
  * Agni Yoga World — Desktop overrides
  */
 
-/* Wider sidebar looks elegant on desktop */
+/* ─── Sidebar z-index & collapse fixes ─────────────────────── */
+
+/* Sidebar sits in normal document flow — never above main content */
 .sidebar-wrapper {
   min-width: 230px;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* Main content area must not be covered when sidebar is open */
+#main-outlet-wrapper,
+.main-outlet-with-sidebar {
+  position: relative;
+  z-index: 1;
+}
+
+/* When sidebar is collapsed/animating, keep it behind content */
+.sidebar-wrapper.sidebar--hidden,
+.sidebar-wrapper[aria-hidden="true"] {
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Discourse wraps sidebar + main in a flex container —
+   make sure it doesn't create a new stacking context that
+   lets the sidebar bleed over the content column */
+.sidebar-container,
+.d-sidebar {
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* clip any overflowing sidebar during transition */
+}
+
+/* The toggle button should always be clickable above both panels */
+.sidebar-toggle-button,
+.btn-sidebar-toggle {
+  position: relative;
+  z-index: 10;
+}
+
+/* Overlay backdrop (mobile/narrow) — sits between sidebar and content */
+.sidebar-overlay {
+  z-index: 5;
 }
 
 /* Slightly larger headings on desktop */
