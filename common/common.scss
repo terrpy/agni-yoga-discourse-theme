@@ -67,7 +67,6 @@ h1, h2, h3, h4, .topic-title,
 }
 
 /* ─── Header ───────────────────────────────────────────────── */
-#main-outlet-wrapper,
 .d-header {
   background: var(--ayw-indigo-deep);
 }
@@ -230,9 +229,17 @@ h1, h2, h3, h4, .topic-title,
 }
 
 /* ─── Navigation / sidebar ──────────────────────────────────── */
+
+/* Discourse manages #main-outlet-wrapper as a CSS grid — don't override it.
+   Only style the sidebar panel itself. */
 .sidebar-wrapper {
   background: var(--ayw-indigo-deep);
   border-right: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+/* Main content takes its grid cell naturally */
+#main-outlet {
+  min-width: 0;
 }
 
 .sidebar-section-header-text {
